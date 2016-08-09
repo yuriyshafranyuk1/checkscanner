@@ -19,7 +19,7 @@ public class DataLoader {
 	public void loadSomeData() {
 		final File dir = new File("src/main/resources/venues/");
 		final File[] directoryListing = dir.listFiles();
-		final int count = 0;
+		int count = 0;
 
 		if (directoryListing != null) {
 
@@ -32,11 +32,12 @@ public class DataLoader {
 					final Map venue = gson.fromJson(content, Map.class);
 
 					List<Map> placeCategories = (List<Map>) venue.get("categories");
+					
 					scanner.close();
+					count++;
 				} catch (final FileNotFoundException e) {
 				}
 			}
 		}
-
 	}
 }
