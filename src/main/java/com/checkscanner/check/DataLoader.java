@@ -18,6 +18,8 @@ import com.google.gson.GsonBuilder;
 @Component
 public class DataLoader
 {
+	
+	private static List<Map> placeCategories;
 
 	@PostConstruct
 	public void loadSomeData()
@@ -39,7 +41,7 @@ public class DataLoader
 					final Gson gson = new GsonBuilder().create();
 					final Map venue = gson.fromJson(content, Map.class);
 
-					final List<Map> placeCategories = (List<Map>) venue.get("categories");
+					placeCategories = (List<Map>) venue.get("categories");
 					scanner.close();
 				}
 				catch (final FileNotFoundException e)
