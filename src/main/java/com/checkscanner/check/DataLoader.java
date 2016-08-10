@@ -34,9 +34,12 @@ public class DataLoader {
 
 					List<Map> placeCategories = (List<Map>) venue.get("categories");
 					
-					scanner.close();
 					count++;
 				} catch (final FileNotFoundException e) {
+				}
+				
+				if(count > 1) {
+					System.out.println("something");
 				}
 			}
 		}
