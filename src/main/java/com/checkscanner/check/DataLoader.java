@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
 import javax.annotation.PostConstruct;
@@ -35,11 +36,12 @@ public class DataLoader {
 					List<Map> placeCategories = (List<Map>) venue.get("categories");
 					
 					count++;
-					scanner.close();
+					
+					System.out.println("bla bla bla");
 				} catch (final FileNotFoundException e) {
 				}
-				
-				if(count > 1) {
+				Matcher matcher = Pattern.compile("@@\\p{IsWhite_Space}-[0-9]+(?:,[0-9]+)?\\p{IsWhite_Space}\\+([0-9]+)(?:,[0-9]+)?\\p{IsWhite_Space}@@.*").matcher("fdef hor rgrei gjreiog");
+				if(matcher.matches()) {
 					System.out.println("something");
 				}
 			}
