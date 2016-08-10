@@ -37,10 +37,6 @@ public class DataLoader {
 					count++;
 				} catch (final FileNotFoundException e) {
 				}
-				
-				if(count > 1) {
-					System.out.println("something");
-				}
 			}
 		}
 	}
